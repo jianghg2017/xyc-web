@@ -11,14 +11,6 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true, // 关键修复
-    allowedHosts: [
-      "285613ab.r7.cpolar.cn",
-      ".cpolar.cn",
-      ".cpolar.io",
-      ".cpolar.top"
-    ],
-    hmr: false,
     proxy: {
       '/api': {
         target: 'http://localhost:3000',

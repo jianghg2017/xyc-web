@@ -112,12 +112,15 @@ function About() {
   const displayValues = error || values.length === 0 ? fallbackValues : values
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="hero-bg py-24 text-white relative">
+        <div className="texture-overlay" />
+        <div className="geo-decoration w-64 h-64 -top-10 -right-10 animate-pulse-slow" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">关于我们</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
             新益策技术有限公司是专注于工业网络安全领域的高科技企业，致力于为全球客户提供专业的安全解决方案
           </p>
         </div>
@@ -150,7 +153,8 @@ function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 bg-primary-500 text-white">
+      <section className="stats-gradient py-20 text-white relative overflow-hidden">
+        <div className="texture-overlay" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {loading ? (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

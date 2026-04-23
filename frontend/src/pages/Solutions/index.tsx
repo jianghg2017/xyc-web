@@ -72,6 +72,7 @@ function Solutions() {
   const industryRef  = useRef<HTMLElement>(null)
   const casesRef     = useRef<HTMLElement>(null)
   const consultRef   = useRef<HTMLElement>(null)
+  const isTabClick   = useRef(false)
 
   const refMap: Record<typeof TABS[number], React.RefObject<HTMLElement>> = {
     行业方案: industryRef,
@@ -79,8 +80,10 @@ function Solutions() {
     咨询服务: consultRef,
   }
 
-  // URL 参数变化时滚动到对应区块
+  // Only scroll when user clicks a tab, not on initial page load
   useEffect(() => {
+    if (!isTabClick.current) return
+    isTabClick.current = false
     const ref = refMap[activeCategory]
     if (ref?.current) {
       setTimeout(() => {
@@ -90,16 +93,20 @@ function Solutions() {
   }, [activeCategory])
 
   const handleTabClick = (tab: typeof TABS[number]) => {
+    isTabClick.current = true
     setSearchParams({ category: tab })
   }
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="hero-bg py-24 text-white relative">
+        <div className="texture-overlay" />
+        <div className="geo-decoration w-64 h-64 -top-10 -right-10 animate-pulse-slow" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">解决方案</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
             针对不同行业的工业网络安全需求，提供专业化的解决方案
           </p>
         </div>
@@ -115,8 +122,8 @@ function Solutions() {
                 onClick={() => handleTabClick(tab)}
                 className={`px-5 py-2 rounded-full font-medium transition-colors ${
                   activeCategory === tab
-                    ? 'bg-primary-500 text-white shadow-sm'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                    ? 'bg-primary-600 text-white shadow-sm'
+                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
                 {tab}
@@ -263,22 +270,24 @@ function Solutions() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="cta-gradient py-20 text-white relative overflow-hidden">
+        <div className="texture-overlay" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-teal/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">需要定制化解决方案？</h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-xl text-white/70 mb-8">
             我们的专家团队将为您量身定制最适合的安全方案
           </p>
           <div className="flex justify-center space-x-4">
             <a
               href="/contact"
-              className="bg-white text-primary-500 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="bg-accent-gold hover:bg-accent-gold-dark text-white px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               咨询方案
             </a>
             <a
               href="/about"
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-primary-500 px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="bg-transparent border-2 border-white/30 hover:border-accent-gold hover:bg-accent-gold/10 text-white px-8 py-3.5 rounded-lg font-semibold transition-all duration-300"
             >
               了解我们
             </a>

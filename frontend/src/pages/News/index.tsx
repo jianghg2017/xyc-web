@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CalendarIcon } from '@heroicons/react/24/solid'
 import { newsApi } from '@/api/modules'
@@ -12,11 +12,19 @@ const categories = ['全部', '公司新闻', '行业资讯']
 
 function NewsPage() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [news, setNews] = useState<News[]>([])
   const [pagination, setPagination] = useState<PaginationType | null>(null)
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState(() => searchParams.get('category') || '')
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(true)
+
+  // Sync category from URL when navigating via submenu links
+  useEffect(() => {
+    const urlCategory = searchParams.get('category') || ''
+    setCategory(urlCategory)
+    setPage(1)
+  }, [searchParams.get('category')])
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -38,17 +46,26 @@ function NewsPage() {
   }, [page, category])
 
   const handleCategoryChange = (cat: string) => {
-    setCategory(cat === '全部' ? '' : cat)
+    const newCategory = cat === '全部' ? '' : cat
+    setCategory(newCategory)
     setPage(1)
+    if (newCategory) {
+      setSearchParams({ category: newCategory })
+    } else {
+      setSearchParams({})
+    }
   }
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="hero-bg py-24 text-white relative">
+        <div className="texture-overlay" />
+        <div className="geo-decoration w-64 h-64 -top-10 -right-10 animate-pulse-slow" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">新闻资讯</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
             了解公司的最新动态和行业资讯
           </p>
         </div>
@@ -66,8 +83,8 @@ function NewsPage() {
                   onClick={() => handleCategoryChange(cat)}
                   className={`px-4 py-2 rounded-full transition-colors ${
                     isActive
-                      ? 'bg-primary-500 text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                   }`}
                 >
                   {cat}
@@ -107,14 +124,14 @@ function NewsPage() {
                       className="w-full h-48 object-cover"
                     />
                   ) : (
-                    <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                      <span className="text-blue-400 text-sm">暂无图片</span>
+                    <div className="w-full h-48 bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center">
+                      <span className="text-primary-300 text-sm">暂无图片</span>
                     </div>
                   )}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       {item.category && (
-                        <span className="text-sm text-primary-500 font-medium">
+                        <span className="text-sm text-accent-gold font-medium">
                           {item.category}
                         </span>
                       )}
@@ -125,7 +142,7 @@ function NewsPage() {
                         </div>
                       )}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 line-clamp-2">
+                    <h3 className="text-xl font-semibold mb-3 line-clamp-2 text-primary-600">
                       {item.title}
                     </h3>
                     {item.summary && (
@@ -133,7 +150,7 @@ function NewsPage() {
                         {item.summary}
                       </p>
                     )}
-                    <div className="flex items-center text-primary-500 font-medium text-sm">
+                    <div className="flex items-center text-accent-gold font-medium text-sm">
                       阅读更多
                       <svg
                         className="w-4 h-4 ml-1"

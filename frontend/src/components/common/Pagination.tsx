@@ -67,7 +67,7 @@ const Pagination: React.FC<PaginationProps> = ({
   const baseItemClass =
     'inline-flex items-center justify-center min-w-[2.25rem] h-9 px-2 rounded-lg text-sm font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1'
 
-  const activeClass = 'bg-primary-500 text-white shadow-sm'
+  const activeClass = 'bg-primary-600 text-white shadow-sm'
   const inactiveClass = 'text-gray-600 hover:bg-primary-50 hover:text-primary-600'
   const disabledClass = 'text-gray-300 cursor-not-allowed'
 

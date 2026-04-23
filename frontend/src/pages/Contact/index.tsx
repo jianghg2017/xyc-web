@@ -210,10 +210,13 @@ function Contact() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="hero-bg py-24 text-white relative">
+        <div className="texture-overlay" />
+        <div className="geo-decoration w-64 h-64 -top-10 -right-10 animate-pulse-slow" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">联系我们</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
             我们期待与您的沟通，为您提供专业的工业网络安全解决方案
           </p>
         </div>
@@ -400,8 +403,8 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className={`w-full bg-primary-500 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 ${
-                    submitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-600'
+                  className={`w-full bg-primary-600 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 ${
+                    submitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-700'
                   }`}
                 >
                   {submitting && (

@@ -62,10 +62,13 @@ function Products() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="hero-bg py-24 text-white relative">
+        <div className="texture-overlay" />
+        <div className="geo-decoration w-64 h-64 -top-10 -right-10 animate-pulse-slow" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">产品中心</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
             丰富的产品矩阵，满足不同场景的工业网络安全需求
           </p>
         </div>
@@ -83,8 +86,8 @@ function Products() {
                   onClick={() => handleCategoryChange(cat)}
                   className={`px-4 py-2 rounded-full transition-colors ${
                     isActive
-                      ? 'bg-primary-500 text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                   }`}
                 >
                   {cat}
@@ -124,19 +127,19 @@ function Products() {
                       className="w-full h-48 object-cover"
                     />
                   ) : (
-                    <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                      <span className="text-blue-400 text-4xl font-bold">
+                    <div className="w-full h-48 bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center">
+                      <span className="text-primary-300 text-4xl font-bold">
                         {product.name.charAt(0)}
                       </span>
                     </div>
                   )}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-primary-500 font-medium">
+                      <span className="text-sm text-accent-gold font-medium">
                         {product.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-primary-600">{product.name}</h3>
                     <p className="text-gray-600 mb-4 text-sm line-clamp-3">
                       {product.description}
                     </p>
@@ -154,7 +157,7 @@ function Products() {
                       </div>
                     )}
                     <button
-                      className="w-full bg-primary-500 hover:bg-primary-600 text-white py-2 rounded-lg font-medium transition-colors"
+                      className="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 rounded-lg font-medium transition-colors"
                       onClick={(e) => {
                         e.stopPropagation()
                         handleCardClick(product.id)
@@ -182,14 +185,15 @@ function Products() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="cta-gradient py-20 text-white relative overflow-hidden">
+        <div className="texture-overlay" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">需要定制化解决方案？</h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-xl text-white/70 mb-8">
             我们的专家团队将为您提供专业的咨询服务
           </p>
           <button
-            className="bg-white text-primary-500 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
+            className="bg-accent-gold hover:bg-accent-gold-dark text-white px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             onClick={() => navigate('/contact')}
           >
             联系我们
