@@ -1,0 +1,206 @@
+[
+  {
+    "name": "后端服务健康检查",
+    "status": "PASS",
+    "details": "状态：ok, 运行时间：161.6652646",
+    "duration": 0
+  },
+  {
+    "name": "前端服务健康检查",
+    "status": "PASS",
+    "details": "HTTP 状态码：200, 内容长度：884 字节",
+    "duration": 0
+  },
+  {
+    "name": "GET/features",
+    "status": "PASS",
+    "details": "返回 3 条数据 (预期 ≥3)",
+    "duration": 0
+  },
+  {
+    "name": "GET/stats",
+    "status": "PASS",
+    "details": "返回 4 条数据 (预期 ≥4)",
+    "duration": 0
+  },
+  {
+    "name": "GET/timeline",
+    "status": "PASS",
+    "details": "返回 6 条数据 (预期 ≥6)",
+    "duration": 0
+  },
+  {
+    "name": "GET/values",
+    "status": "PASS",
+    "details": "返回 3 条数据 (预期 ≥3)",
+    "duration": 0
+  },
+  {
+    "name": "GET/settings",
+    "status": "PASS",
+    "details": "返回 12 个属性 (预期 ≥12)",
+    "duration": 0
+  },
+  {
+    "name": "GET/banners",
+    "status": "PASS",
+    "details": "返回 3 条数据 (预期 ≥3)",
+    "duration": 0
+  },
+  {
+    "name": "GET /api/news (列表)",
+    "status": "SKIP",
+    "details": "数据库字段可能不完整 (需要 sort_order 字段)",
+    "duration": 0
+  },
+  {
+    "name": "GET /api/products (列表)",
+    "status": "SKIP",
+    "details": "数据库字段可能不完整 (需要 sort_order 字段)",
+    "duration": 0
+  },
+  {
+    "name": "图片/images/logo/logo.png",
+    "status": "SKIP",
+    "details": "文件不存在 (占位符)",
+    "duration": 0
+  },
+  {
+    "name": "图片/images/banners/banner-1.jpg",
+    "status": "SKIP",
+    "details": "文件不存在 (占位符)",
+    "duration": 0
+  },
+  {
+    "name": "图片/images/banners/banner-2.jpg",
+    "status": "SKIP",
+    "details": "文件不存在 (占位符)",
+    "duration": 0
+  },
+  {
+    "name": "图片/images/banners/banner-3.jpg",
+    "status": "SKIP",
+    "details": "文件不存在 (占位符)",
+    "duration": 0
+  },
+  {
+    "name": "  图片目录：products",
+    "status": "PASS",
+    "details": "存在",
+    "duration": 0
+  },
+  {
+    "name": "  图片目录：news",
+    "status": "PASS",
+    "details": "存在",
+    "duration": 0
+  },
+  {
+    "name": "  图片目录：banners",
+    "status": "PASS",
+    "details": "存在",
+    "duration": 0
+  },
+  {
+    "name": "  图片目录：team",
+    "status": "PASS",
+    "details": "存在",
+    "duration": 0
+  },
+  {
+    "name": "  图片目录：logo",
+    "status": "PASS",
+    "details": "存在",
+    "duration": 0
+  },
+  {
+    "name": "数据库连接",
+    "status": "PASS",
+    "details": "成功读取 company_stats 表",
+    "duration": 0
+  },
+  {
+    "name": "  - 数据完整性",
+    "status": "PASS",
+    "details": "返回 4 条记录",
+    "duration": 0
+  },
+  {
+    "name": "API 响应格式",
+    "status": "PASS",
+    "details": "包含所有必需字段 (success, data, timestamp)",
+    "duration": 0
+  },
+  {
+    "name": "  - 数据结构",
+    "status": "PASS",
+    "details": "核心优势包含所有必需字段",
+    "duration": 0
+  },
+  {
+    "name": "前端 API 配置",
+    "status": "PASS",
+    "details": "VITE_API_URL 配置正确",
+    "duration": 0
+  },
+  {
+    "name": "文件：backend/controllers/public-data.js",
+    "status": "PASS",
+    "details": "存在 (0.64 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文件：backend/controllers/news.js",
+    "status": "PASS",
+    "details": "存在 (4.56 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文件：backend/controllers/products.js",
+    "status": "PASS",
+    "details": "存在 (5.10 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文件：backend/routes/public-data.js",
+    "status": "PASS",
+    "details": "存在 (4.30 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文件：frontend/src/api/public.ts",
+    "status": "PASS",
+    "details": "存在 (2.10 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文件：frontend/src/pages/Home/index.tsx",
+    "status": "PASS",
+    "details": "存在 (13.84 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文档：DEVELOPMENT-PLAN.md",
+    "status": "PASS",
+    "details": "存在 (6.94 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文档：DEVELOPMENT-PROGRESS.md",
+    "status": "PASS",
+    "details": "存在 (9.68 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文档：backend/database/schema.md",
+    "status": "PASS",
+    "details": "存在 (12.95 KB)",
+    "duration": 0
+  },
+  {
+    "name": "文档：backend/public/images/README.md",
+    "status": "PASS",
+    "details": "存在 (3.87 KB)",
+    "duration": 0
+  }
+]

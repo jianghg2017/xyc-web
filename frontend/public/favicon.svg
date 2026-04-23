@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <!-- 圆角背景 -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  <!-- 六边形轮廓 -->
+  <path d="M16 4 L26 9.5 L26 20.5 L16 26 L6 20.5 L6 9.5 Z" 
+        fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.4"/>
+  <!-- 向上箭头 -->
+  <path d="M16 8 L22 16 L18.5 16 L18.5 22 L13.5 22 L13.5 16 L10 16 Z" 
+        fill="#FFFFFF"/>
+  <!-- 底部齿轮齿 -->
+  <rect x="10" y="24" width="3" height="2" rx="0.5" fill="#93C5FD" opacity="0.7"/>
+  <rect x="14.5" y="24" width="3" height="2" rx="0.5" fill="#93C5FD" opacity="0.7"/>
+  <rect x="19" y="24" width="3" height="2" rx="0.5" fill="#93C5FD" opacity="0.7"/>
+</svg>
