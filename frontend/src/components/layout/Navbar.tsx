@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
+import { company } from '@/config/company'
 
 const navItems = [
   { name: '首页', path: '/' },
@@ -47,8 +48,8 @@ function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/logo-white.svg"
-              alt="新益策 XINYICE" 
+              src={company.logoWhite}
+              alt={`${company.name} ${company.nameEn}`} 
               className="h-10 w-auto"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
@@ -57,8 +58,8 @@ function Navbar() {
               }}
             />
             <div id="text-logo" className="items-center gap-2 text-2xl font-bold text-white hidden">
-              <span>新益策</span>
-              <span className="text-xs font-normal text-white/60">XINYICE</span>
+              <span>{company.name}</span>
+              <span className="text-xs font-normal text-white/60">{company.nameEn}</span>
             </div>
           </Link>
 

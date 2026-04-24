@@ -138,4 +138,4 @@ VITE_API_URL=http://localhost:3000/api
 
 ## License
 
-Copyright © 2026 新益策技术有限公司
+Copyright © 2026 公司技术有限公司

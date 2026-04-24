@@ -322,7 +322,7 @@ CREATE TABLE site_settings (
 ```sql
 INSERT INTO site_settings (setting_key, setting_value, category, setting_type) VALUES
 -- 基本信息
-('site_name', '新益策技术有限公司', 'basic', 'text'),
+('site_name', '公司技术有限公司', 'basic', 'text'),
 ('site_logo', '/images/logo.png', 'basic', 'text'),
 ('site_favicon', '/images/favicon.ico', 'basic', 'text'),
 ('site_description', '专注于工业网络安全的高科技企业', 'seo', 'text'),

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { BuildingOfficeIcon, UserGroupIcon, TrophyIcon, ShieldCheckIcon } from '@heroicons/react/24/solid'
 import { statsAPI, timelineAPI, valuesAPI } from '@/api/public'
 import SkeletonCard from '@/components/common/SkeletonCard'
+import { company } from '@/config/company'
 
 // Static fallback data used when API fails
 const fallbackStats = [
@@ -121,7 +122,7 @@ function About() {
           <div className="gold-accent-line mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6">关于我们</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-            新益策技术有限公司是专注于工业网络安全领域的高科技企业，致力于为全球客户提供专业的安全解决方案
+            {company.aboutHeroText}
           </p>
         </div>
       </section>
@@ -133,8 +134,7 @@ function About() {
             <div>
               <h2 className="text-3xl font-bold mb-6">公司简介</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                新益策技术有限公司成立于 2015 年，是国内领先的工业网络安全解决方案提供商。公司专注于工业控制系统的网络安全研究，
-                为电力、石化、轨道交通、智能制造等关键基础设施行业提供全方位的安全防护。
+                {company.aboutIntro}
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 我们拥有一支由网络安全专家、工业控制工程师和软件工程师组成的专业团队，

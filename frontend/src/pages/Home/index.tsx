@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { ShieldCheckIcon, BoltIcon, GlobeAltIcon } from '@heroicons/react/24/solid'
 import { API } from '@/api'
 import { getImageUrl } from '@/utils/image'
+import { company } from '@/config/company'
 
 // 图标映射
 const iconMap: Record<string, React.FC<any>> = {
@@ -362,7 +363,7 @@ function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary-600 mb-4">新闻动态</h2>
             <div className="section-divider mb-4" />
             <p className="text-gray-500 max-w-2xl mx-auto">
-              了解新益策的最新动态和行业资讯
+              了解{company.name}的最新动态和行业资讯
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

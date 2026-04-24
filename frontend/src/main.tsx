@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from './App'
+import { company } from './config/company'
 import './index.css'
+
+// Set page title from company config
+document.title = `${company.name} - ${company.tagline}`
 
 const queryClient = new QueryClient({
   defaultOptions: {

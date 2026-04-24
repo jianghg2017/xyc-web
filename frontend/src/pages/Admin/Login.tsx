@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { LockClosedIcon, UserIcon } from '@heroicons/react/24/solid'
 import { adminApi } from '@/api'
+import { company } from '@/config/company'
 
 const loginSchema = z.object({
   email: z.string().email('请输入有效的邮箱地址'),
@@ -56,7 +57,7 @@ function AdminLogin() {
         <div className="bg-white rounded-2xl shadow-2xl p-8">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="text-3xl font-bold text-blue-600 mb-2">新益策</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">{company.name}</div>
             <h1 className="text-2xl font-bold text-gray-900">管理后台登录</h1>
             <p className="text-gray-600 mt-2">请输入您的账号信息</p>
           </div>

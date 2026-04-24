@@ -5,6 +5,7 @@ import {
   MapPinIcon,
   ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/solid'
+import { company } from '@/config/company'
 
 function Footer() {
   return (
@@ -13,7 +14,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
-            <div className="text-2xl font-bold mb-2">新益策</div>
+            <div className="text-2xl font-bold mb-2">{company.name}</div>
             <div className="gold-accent-line mb-4" />
             <p className="text-white/50 text-sm leading-relaxed">
               专注于工业网络安全领域，提供全方位的安全解决方案，保护关键基础设施免受网络威胁。
@@ -89,7 +90,7 @@ function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <EnvelopeIcon className="w-4 h-4 text-accent-gold mt-0.5 flex-shrink-0" />
-                <span className="text-white/50 text-sm">info@winicssec.com</span>
+                <span className="text-white/50 text-sm">{company.email}</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPinIcon className="w-4 h-4 text-accent-gold mt-0.5 flex-shrink-0" />
@@ -105,7 +106,7 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-white/40 text-sm">
-          <p>© 2026 北京新益策顾问管理有限公司 版权所有 | 京 ICP 备 xxxxxx 号</p>
+          <p>© 2026 {company.fullName} 版权所有 | 京 ICP 备 xxxxxx 号</p>
         </div>
       </div>
     </footer>

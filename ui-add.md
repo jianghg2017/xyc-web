@@ -1,7 +1,7 @@
 # UI/UX 优化建议报告
 
 **生成日期**: 2026-04-23  
-**项目名称**: 新益策企业官网  
+**项目名称**: 公司企业官网  
 **分析对象**: http://localhost:5173/  
 **目标定位**: 智能制造领域咨询与全领域方案企业
 
@@ -186,7 +186,7 @@
 ```tsx
 // 在每个页面添加 SEO 组件
 <Helmet>
-  <title>新益策 - 智能制造网络安全咨询专家</title>
+  <title>公司 - 智能制造网络安全咨询专家</title>
   <meta name="description" content="专注为制造企业提供专业的工业网络安全咨询与解决方案..." />
   <meta name="keywords" content="智能制造，工业网络安全，安全咨询，解决方案" />
   <meta property="og:title" content="..." />

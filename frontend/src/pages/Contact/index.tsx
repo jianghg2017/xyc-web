@@ -6,6 +6,7 @@ import {
   MapPinIcon,
   ClockIcon,
 } from '@heroicons/react/24/solid'
+import { company } from '@/config/company'
 import { settingsAPI } from '../../api/public'
 import { contactApi } from '../../api/modules'
 import type { ContactForm as ContactFormType } from '../../types'
@@ -63,7 +64,7 @@ interface ContactSettings {
 const DEFAULT_CONTACT_SETTINGS: ContactSettings = {
   address: '北京市朝阳区 xxx 路 xxx 号',
   phone: '400-xxx-xxxx',
-  email: 'info@winicssec.com',
+  email: company.email,
   hours: '周一至周五 9:00-18:00',
 }
 
